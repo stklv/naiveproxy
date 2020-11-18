@@ -46,17 +46,18 @@ route {
     basic_auth user pass
     hide_ip
     hide_via
-    probe_resistance secret.com
+    probe_resistance
   }
   file_server { root /var/www/html }
 }
 ```
+This is Caddy 2 syntax. It is not the same with Caddy 1.
 
 Locally run `./naive` with the following `config.json` to get a SOCKS5 proxy at local port 1080.
 ```json
 {
   "listen": "socks://127.0.0.1:1080",
-  "proxy": "https://username:password@example.com"
+  "proxy": "https://user:pass@example.com"
 }
 ```
 
